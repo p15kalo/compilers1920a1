@@ -13,14 +13,7 @@ transitions = { 's0': { 'num' : 's1', 'dot' : 's2' },
                 's3': { 'num' : 's3' }  } 
 
 
-accepts = { 
-
-	# (Β) Συμπληρώστε το λεξικό των καταστάσεων αποδοχής και των
-	# αντίστοιχων επιστρεφόμενων συμβόλων (tokens)
-	# Για λεπτομέρειες δείτε στο:
-	# http://mixstef.github.io/courses/compilers/lecturedoc/unit1/module1.html#id8
-
-     	  }
+accepts = { 's3':'FLOAT_TOKEN'  }
 
 
 def get_char(text,pos):
@@ -28,13 +21,9 @@ def get_char(text,pos):
 	or None if out of bounds. """
 	
 	if pos<0 or pos>=len(text): return None
-	
 	c = text[pos]
-	
-	# (Γ) Προαιρετικά, μπορείτε να ομαδοποιήσετε τους
-	# χαρακτήρες εισόδου εδώ.
-	# Για λεπτομέρειες δείτε στο:
-	# http://mixstef.github.io/courses/compilers/lecturedoc/unit1/module1.html#id11
+	if c>='0' and c<='9': return'num'	
+	if c=='.': return'dot'	
 	
 	return c
 	
