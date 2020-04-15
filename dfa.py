@@ -7,14 +7,10 @@
 """
 
 
-transitions = { 
-
-	# (Α) Συμπληρώστε τον πίνακα μεταβάσεων ως λεξικό (dictionary).
-	# Η αρχική κατάσταση πρέπει να ονομάζεται 's0'.
-	# Για λεπτομέρειες δείτε στο:
-	# http://mixstef.github.io/courses/compilers/lecturedoc/unit1/module1.html#id7
-
-     	      } 
+transitions = { 's0': { 'num' : 's1', 'dot' : 's2' },
+                's1': { 'num' : 's1', 'dot' : 's3' },
+                's2': { 'num' : 's3' },
+                's3': { 'num' : 's3' }  } 
 
 
 accepts = { 
